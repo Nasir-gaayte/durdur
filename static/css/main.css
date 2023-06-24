@@ -155,6 +155,26 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
   color: #DBDBDB;
   background-color: #232323;
 }
+/* ----------------------------------------------------------slider-------------------------*/
+
+#slider{
+ 
+  width:600px;
+  height:400px;
+  padding:5px;
+  box-shadow: 0 0 20px rgba(0,0,0,1);
+ 
+}
+.slider{
+  list-style:none;
+}
+#slider>li{
+  position:absolute;
+  top:5px;
+  left:5px;
+  right:5px;
+  bottom:5px;
+  }
 
 /* ----------------------------------------------BreadCrumb------------------------------------- */
 #breadcrumb {
@@ -238,9 +258,14 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #latest ul li.last {
   margin-right: 0;
 }
-/* ----------------------------------------------Late------------------------------------- */
+/* ----------------------------------------------service------------------------------------- */
 
-
+#service{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
 
 /* ----------------------------------------------Intro------------------------------------- */
 #intro {

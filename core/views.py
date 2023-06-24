@@ -13,6 +13,14 @@ def service(request):
     return render(request,'core/service.html')
 
 
+def city(request):
+    return render(request,'core/city.html')
+
+
+def about(request):
+    return render(request,'core/about.html')
+
+
 
 def addCards(request):
     if request.method == 'POST':

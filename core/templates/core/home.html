@@ -7,6 +7,7 @@
         <title>DurDurNet</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{% static '/css/main.css' %}"
             type="text/css">
 
@@ -22,10 +23,12 @@
                     <ul>
                         <li class="active"><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'service' %}">Service</a></li>
-                        <li><a href="#">Full Width</a></li>
-                        <li><a href="#">Link Text</a></li>
-                        <li class="last"><a href="{% url 'add_card' %}">add
-                                cards</a></li>
+                        <li><a href="{% url 'city' %}">CITYS</a></li>
+                        <li><a href="{% url 'about' %}">ABOUT</a></li>
+                     
+                      
+                        <!-- <li class="last"><a href="{% url 'add_card' %}">add
+                                cards</a></li> -->
                     </ul>
                 </div>
                 <br class="clear" />
@@ -37,8 +40,39 @@
             <div id="latest">
 
                 <div class="fl_left">
-                    <a href="#"><img
-                            src="/static/image/main.jpg" alt /></a>
+
+                     <!-- var $img2 = ""
+                var $img3 = "{% static '/image/main.jpg' %}"
+                var $img4 = "{% static '/image/logo.jpg' %}" -->
+
+                        <ul id="slider">
+                            <li class="slide" >
+                                <a href="#"><img id="img1"
+                                    src="{% static '/image/main.jpg' %}" alt /></a>
+                            </li>
+                            <li class="slide" >
+                                <a href="#"><img id="img1"
+                                    src="{% static '/image/cawke.png' %}" alt /></a>
+                            </li>
+                            <li class="slide" >
+                                <a href="#"><img id="img1"
+                                    src="{% static '/image/n.jpg' %}" alt /></a>
+                            </li>
+                            <li class="slide" >
+                                <a href="#"><img id="img1"
+                                    src="{% static '/image/logo.jpg' %}" alt /></a>
+                            </li>
+                            <li class="slide" >
+                                <a href="#"><img id="img1"
+                                    src="{% static '/image/4n.jpg' %}" alt /></a>
+                            </li>
+                            <li class="slide" >
+                                <a href="#"><img id="img1"
+                                    src="{% static '/image/1n.jpg' %}" alt /></a>
+                            </li>
+                        </ul>
+                
+                    
                 </div>
                 <div class="fl_right">
                     <h2>Durdur Network is a new telecom Company</h2>
@@ -182,6 +216,22 @@
                 <br class="clear" />
             </div>
         </div>
+
+
+        <script>
+           
+            $(document).ready(function(){
+                $('#slider >li:gt(0)').hide();
+                  setInterval(function() {
+                    $('#slider > li:first')
+                      .fadeOut(2000)
+                      .next()
+                      .fadeIn(1000)
+                      .end()
+                      .appendTo('#slider');
+                }, 4500);
+              });
+          </script>
 
     </body>
 </html>
