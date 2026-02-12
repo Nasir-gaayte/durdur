@@ -1,8 +1,10 @@
+providers = ["python"]
+
 [phases.setup]
 nixPkgs = ["zlib", "libjpeg", "libpng", "gcc", "binutils"]
 
 [phases.build]
-cmds = ["python manage.py collectstatic --noinput"]
+cmds = ["python3 manage.py collectstatic --noinput"]
 
 [start]
 cmd = "./start.sh"
