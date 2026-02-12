@@ -1,10 +1,47 @@
-{% extends 'core/home.html' %}
-{% block content %}
-<div id="service">
-    <h1 class="service">
-    mamulka waxay rabaan in lasoo bandhigo oo service ah ayaa halka galaaya
-</h1>
-  
-</div>
+{% extends 'core/base.html' %}
+{% load static %}
 
-{% endblock content %}
+{% block title %}Our Services - DurDurNet{% endblock %}
+
+{% block content %}
+<section id="services-hero" style="text-align: center; padding: 4rem 0;">
+    <h1>Our Services</h1>
+    <p>Connecting you to the world with speed and reliability.</p>
+</section>
+
+<section class="cards-grid">
+    <div class="card">
+        <div class="card-img-container">
+            <img class="card-img" src="{% static 'image/logo_two.jpg' %}" alt="Home Internet">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Home Internet</h3>
+            <p class="card-text">Fast and reliable internet for your home. Stream, game, and browse without
+                interruption.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-img-container">
+            <img class="card-img" src="{% static 'image/logo_two.jpg' %}" alt="Business Internet">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Business Solutions</h3>
+            <p class="card-text">Dedicated fiber lines and high-speed connections for your business needs.</p>
+            <a href="#" class="btn">Get a Quote</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-img-container">
+            <img class="card-img" src="{% static 'image/logo_two.jpg' %}" alt="Mobile Data">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Mobile Data</h3>
+            <p class="card-text">Stay connected on the go with our 5G mobile data packages.</p>
+            <a href="#" class="btn">View Plans</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

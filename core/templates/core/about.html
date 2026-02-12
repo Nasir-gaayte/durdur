@@ -1,11 +1,27 @@
-{% extends 'core/home.html' %}
-{% block content %}
-<div id="service">
-    <h1 class="service">
-    
-        Canaawiinta sharkada iyo xarumaha muhiimka ah 
-</h1>
-  
-</div>
+{% extends 'core/base.html' %}
+{% load static %}
 
-{% endblock content %}
+{% block title %}About Us - DurDurNet{% endblock %}
+
+{% block content %}
+<section id="about-hero" style="text-align: center; padding: 4rem 0;">
+    <h1>About Us</h1>
+    <p>Connecting Puntland to the World.</p>
+</section>
+
+<section class="wrapper"
+    style="max-width: 800px; margin: 0 auto; background: var(--surface-color); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+    <h2>Who We Are</h2>
+    <p>DurDur Network is a premier telecommunications provider based in Garowe. We specialize in delivering high-speed
+        5G internet services to businesses and households across the region.</p>
+
+    <h2 style="margin-top: 2rem;">Our Mission</h2>
+    <p>To provide reliable, affordable, and high-speed internet connectivity to every corner of Puntland.</p>
+
+    <h2 style="margin-top: 2rem;">Contact Information</h2>
+    <ul>
+        <li>Headquarters: Garowe</li>
+        <li>Email: info@durdurnet.com</li>
+    </ul>
+</section>
+{% endblock %}

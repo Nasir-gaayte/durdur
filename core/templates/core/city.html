@@ -1,10 +1,30 @@
-{% extends 'core/home.html' %}
-{% block content %}
-<div id="service">
-    <h1 class="service">
-    mamulka waxay rabaan in lasoo bandhigo oo magaaloyinka ku saabsan 
-</h1>
-  
-</div>
+{% extends 'core/base.html' %}
+{% load static %}
 
-{% endblock content %}
+{% block title %}Coverage Cities - DurDurNet{% endblock %}
+
+{% block content %}
+<section id="cities-hero" style="text-align: center; margin-bottom: 3rem;">
+    <h1>Our Coverage Areas</h1>
+    <p>We are proud to serve the following major cities in Puntland.</p>
+</section>
+
+<div class="wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+    <div class="card" style="text-align: center; padding: 2rem;">
+        <h3>Garowe</h3>
+        <p>Headquarters & Full 5G Coverage</p>
+    </div>
+    <div class="card" style="text-align: center; padding: 2rem;">
+        <h3>Bosaso</h3>
+        <p>Commercial Hub Coverage</p>
+    </div>
+    <div class="card" style="text-align: center; padding: 2rem;">
+        <h3>Galkacyo</h3>
+        <p>Central Region Coverage</p>
+    </div>
+    <div class="card" style="text-align: center; padding: 2rem;">
+        <h3>Qardho</h3>
+        <p>High Speed Fiber Available</p>
+    </div>
+</div>
+{% endblock %}

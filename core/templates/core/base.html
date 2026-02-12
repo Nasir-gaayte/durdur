@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DurDurNet{% endblock %}</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/modern.css' %}">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body id="top">
+
+    <!-- Header -->
+    <header>
+        <div class="wrapper header-content">
+            <div class="logo">
+                <a href="{% url 'home' %}">DurDur<span style="color: var(--primary-color);">Net</span></a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                &#9776;
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'service' %}">Services</a></li>
+                    <li><a href="{% url 'city' %}">Cities</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li>
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <div class="slider round"></div>
+                            </label>
+                            <span style="margin-left: 10px;">Dark Mode</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="wrapper">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-grid">
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: info@durdurnet.com</li>
+                    <li>Phone: +123 456 7890</li>
+                    <li>Garowe, Puntland</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Careers</h3>
+                <ul>
+                    <li><a href="#">Job Openings</a></li>
+                    <li><a href="#">Interpolated Jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Packages</h3>
+                <ul>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Locations</h3>
+                <ul>
+                    <li><a href="#">Bosaso</a></li>
+                    <li><a href="#">Garowe</a></li>
+                    <li><a href="#">Galkacyo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper" style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.8rem;">
+            <p>&copy; {% now "Y" %} DurDur Network. Implementation by Nasir Gaayte.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Dark Mode Toggle
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+    
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

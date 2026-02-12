@@ -1,237 +1,73 @@
-<!DOCTYPE html>
+{% extends 'core/base.html' %}
 {% load static %}
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DurDurNet</title>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{% static '/css/main.css' %}"
-            type="text/css">
-
-    </head>
-    <body id="top">
-        <div class="wrapper">
-            <div id="header">
-                <div id="logo">
-                    <h1><a href="{% url 'home' %}">Durdur Net Works</a></h1>
-                    <p>All The Net Serves You Want</p>
-                </div>
-                <div id="topnav">
-                    <ul>
-                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'service' %}">Service</a></li>
-                        <li><a href="{% url 'city' %}">CITYS</a></li>
-                        <li><a href="{% url 'about' %}">ABOUT</a></li>
-                     
-                      
-                        <!-- <li class="last"><a href="{% url 'add_card' %}">add
-                                cards</a></li> -->
-                    </ul>
-                </div>
-                <br class="clear" />
-            </div>
+{% block content %}
+<section id="hero">
+    <div id="slider">
+        <!-- Add your slider images here -->
+        <div class="slide">
+            <img src="{% static 'image/main.jpg' %}" alt="Main Image">
         </div>
-        {% block content %}
-
-        <div class="wrapper">
-            <div id="latest">
-
-                <div class="fl_left">
-
-                     <!-- var $img2 = ""
-                var $img3 = "{% static '/image/main.jpg' %}"
-                var $img4 = "{% static '/image/logo.jpg' %}" -->
-
-                        <ul id="slider">
-                            <li class="slide" >
-                                <a href="#"><img id="img1"
-                                    src="{% static '/image/main.jpg' %}" alt /></a>
-                            </li>
-                            <li class="slide" >
-                                <a href="#"><img id="img1"
-                                    src="{% static '/image/cawke.png' %}" alt /></a>
-                            </li>
-                            <li class="slide" >
-                                <a href="#"><img id="img1"
-                                    src="{% static '/image/n.jpg' %}" alt /></a>
-                            </li>
-                            <li class="slide" >
-                                <a href="#"><img id="img1"
-                                    src="{% static '/image/logo.jpg' %}" alt /></a>
-                            </li>
-                            <li class="slide" >
-                                <a href="#"><img id="img1"
-                                    src="{% static '/image/4n.jpg' %}" alt /></a>
-                            </li>
-                            <li class="slide" >
-                                <a href="#"><img id="img1"
-                                    src="{% static '/image/1n.jpg' %}" alt /></a>
-                            </li>
-                        </ul>
-                
-                    
-                </div>
-                <div class="fl_right">
-                    <h2>Durdur Network is a new telecom Company</h2>
-                    <p>Durdur Network is a new telecom Company in Puntland
-                        headquartered in Garowe, who provide 5G service.</p>
-                    <ul>
-                        <li class="last"><a href="#"><img
-                                    src="{% static 'image/n.jpg' %}" alt /></a></li>
-                        <li class="last"><a href="#"><img
-                                    src="{% static 'image/5_n.jpg' %}" alt /></a></li>
-                        <li class="last"><a href="#"><img
-                                    src="{% static 'image/logo.jpg' %}" alt /></a></li>
-                    </ul>
-                </div>
-                <br class="clear" />
-            </div>
-
+        <div class="slide">
+            <img src="{% static 'image/cawke.png' %}" alt="Cawke">
         </div>
-        <div class="wrapper">
-            <div id="intro">
-                {% for c in cards %}
-                <ul>
-
-                    <li class="last">
-                        <div class="title">
-
-                            <h2>{{c.title|truncatewords:7 }}</h2>
-                        </div>
-                        <div class="imgholder"><a
-                                href="{% url 'card_detail' c.pk %}"><img
-                                    class="card-img"
-                                    src="{{c.img.url}}" alt /></a></div>
-                        <div class="body">
-
-                            <p>{{c.head_line|truncatewords:30}}
-                            </p>
-                            <p>{{c.body|truncatewords:30}}</p>
-                        </div>
-                        <p class="readmore"><a
-                                href="{% url 'card_detail' c.pk %}">Continue
-                                Reading &raquo;</a></p>
-                    </li>
-                </ul>
-                {%endfor%}
-                <br class="clear" />
-            </div>
+        <div class="slide">
+            <img src="{% static 'image/n.jpg' %}" alt="Network">
         </div>
-
-        <div class="wrapper">
-            <div id="container">
-                <div id="content">
-                    <h2>About This Free CSS Template</h2>
-                    <p>This is a W3C standards compliant free website template
-                        from <a href="http://www.os-templates.com/">OS Templates</a>.</p>
-                    <p>This template is distributed using a <a
-                            href="http://www.os-templates.com/template-terms">Website
-                            Template Licence</a>, which allows you to use and
-                        modify the template for both personal and commercial use
-                        when you keep the provided credit links in the footer.</p>
-                    <p>For more CSS templates visit <a
-                            href="http://www.os-templates.com/">Free Website
-                            Templates</a>.</p>
-                </div>
-                <div id="column">
-                    <div class="holder">
-                        <h2>facebook.com/durdurnetwork</h2>
-                        <ul id="latestnews">
-                            <li class="last"><img class="imgl"
-                                    src="{% static 'image/durdurfacebook.png' %}"
-                                    alt />
-                                <p><strong>Indonectetus facilis leo nibh.</strong></p>
-                                <p>Nullamlacus dui ipsum cons eque loborttis non
-                                    euis que morbi penas dapibulum orna.</p>
-                                <p class="readmore"><a
-                                        href="https://www.facebook.com/durdurnetwork">Continue
-                                        Reading
-                                        &raquo;</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <br class="clear" />
-            </div>
+        <div class="slide">
+            <img src="{% static 'image/logo.jpg' %}" alt="Logo">
         </div>
-        {% endblock content %}
-        <div class="wrapper">
-            <div id="footer">
-                <div id="newsletter">
-                    <h2>La xiriir durdurnetwork !</h2>
-                    <p>Please enter your email to join our mailing list</p>
-                    <form action="#" method="post">
-                        <fieldset>
-                            <legend>News Letter</legend>
-                            <input type="text" value="Enter Email Here&hellip;" />
-                            <input type="submit" name id="news_go"
-                                value="GO" />
-                        </fieldset>
-                    </form>
-                    <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
-                </div>
-                <div class="footbox">
-                    <h2>Shaqoo iyo shaqaale </h2>
-                    <ul>
-                        <li><a href="#">Cabasho Shaqoo</a></li>
-                        <li><a href="#">Shaqo Qabyo ah</a></li>
-                        <li><a href="#">Shaqooyen Lahakiyay</a></li>
+    </div>
+</section>
 
-                        <li class="last"><a href="#">Praesent et eros</a></li>
-                    </ul>
-                </div>
-                <div class="footbox">
-                    <h2>Laxiriira xirmooyinka</h2>
-                    <ul>
-                        <li><a href="#">Xirmo sharkadeed</a></li>
-                        <li><a href="#">Xirmo xafiiseed </a></li>
-                        <li><a href="#">Xirmo xaafadeed</a></li>
-                        <li><a href="#">Xirmo mahred </a></li>
-                        <li class="last"><a href="#">Xirmo ganacsi</a></li>
-                    </ul>
-                </div>
-                <div class="footbox">
-                    <h2>Xarumaha </h2>
-                    <ul>
-                        <li><a href="#">Bosaso</a></li>
-                        <li><a href="#">Qardho</a></li>
-                        <li><a href="#">Garowe</a></li>
-                        <li><a href="#">Galkacyo</a></li>
-                        <li class="last"><a href="#">Xarunta raiisiga </a></li>
-                    </ul>
-                </div>
-                <br class="clear" />
-            </div>
+<section id="intro" style="text-align: center; margin-bottom: 3rem;">
+    <h1>Welcome to DurDur Network</h1>
+    <p>Providing the best 5G services in Puntland.</p>
+</section>
+
+<section id="latest-news" class="cards-grid">
+    {% for c in cards %}
+    <div class="card">
+        <div class="card-img-container">
+            <img class="card-img" src="{{ c.img.url }}" alt="{{ c.title }}">
         </div>
-        <div class="wrapper">
-            <div id="copyright">
-                <p class="fl_left">Copyright &copy; 2023 - All Rights Reserved -
-                    <a href="#">www.info@naz1tech.com</a></p>
-                <p class="fl_right">Template by <a target="_blank"
-                        href="#"
-                        title="nasir gaayte">Nasir Gaayte</a></p>
-                <br class="clear" />
-            </div>
+        <div class="card-body">
+            <h3 class="card-title">{{ c.title|truncatewords:7 }}</h3>
+            <p class="card-text">{{ c.head_line|truncatewords:20 }}</p>
         </div>
+        <div class="card-footer">
+            <a href="{% url 'card_detail' c.pk %}" class="btn">Read More</a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
 
+<section id="about-snippet" style="margin-top: 4rem; display: flex; gap: 2rem; align-items: center;">
+    <div style="flex: 1;">
+        <h2>About DurDur Network</h2>
+        <p>We are a leading telecommunications company headquartered in Garowe, dedicated to connecting people with
+            high-speed internet.</p>
+        <a href="{% url 'about' %}" class="btn" style="margin-top: 1rem;">Learn More</a>
+    </div>
+    <div style="flex: 1;">
+        <img src="{% static 'image/logo.jpg' %}" alt="About DurDur"
+            style="border-radius: var(--radius); box-shadow: var(--shadow);">
+    </div>
+</section>
+{% endblock %}
 
-        <script>
-           
-            $(document).ready(function(){
-                $('#slider >li:gt(0)').hide();
-                  setInterval(function() {
-                    $('#slider > li:first')
-                      .fadeOut(2000)
-                      .next()
-                      .fadeIn(1000)
-                      .end()
-                      .appendTo('#slider');
-                }, 4500);
-              });
-          </script>
-
-    </body>
-</html>
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#slider > .slide:gt(0)').hide();
+        setInterval(function () {
+            $('#slider > .slide:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slider');
+        }, 4000);
+    });
+</script>
+{% endblock %}
