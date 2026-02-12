@@ -1,7 +1,7 @@
 providers = ["python"]
 
 [phases.setup]
-nixPkgs = ["python312", "zlib", "libjpeg", "libpng", "gcc", "binutils"]
+nixPkgs = ["python311", "zlib", "libjpeg", "libpng", "gcc", "binutils"]
 
 [phases.build]
 cmds = ["python3 manage.py collectstatic --noinput"]
