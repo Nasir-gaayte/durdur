@@ -27,5 +27,9 @@ COPY . /app/
 # Expose port 8000
 EXPOSE 8000
 
-# Run migrations and start server
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+# Copy start script and make executable
+COPY start.sh /app/
+RUN chmod +x /app/start.sh
+
+# Run the start script
+CMD ["/app/start.sh"]
